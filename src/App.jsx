@@ -8,6 +8,7 @@ import Skills from './components/sections/Skills/Skills'
 import ResearchAndDevelopment from './components/sections/ResearchAndDevelopment/ResearchAndDevelopment'
 import Acamedic from './components/sections/Acamedic/Acamedic'
 import Certifications from './components/sections/Certifications/Certifications'
+import Footer from './components/layout/Footer/Footer'
 
 function App() {
 	return (
@@ -21,7 +22,7 @@ function App() {
 			<ResearchAndDevelopment />
 			<Acamedic />
 			<Certifications />
-			
+			<Footer />
 		</>
 	)
 }
