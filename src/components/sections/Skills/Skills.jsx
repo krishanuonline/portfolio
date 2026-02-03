@@ -110,7 +110,7 @@ const Skills = () => {
               <div>
                 <h4 className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-3">Frontend</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['ReactJS', 'NextJS', 'Redux', 'Tailwind'].map(s => <span key={s} className="px-3 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20">{s}</span>)}
+                  {['ReactJS', 'NextJS', 'Redux', 'Tailwind', 'React Native'].map(s => <span key={s} className="px-3 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20">{s}</span>)}
                 </div>
               </div>
               <div>
@@ -131,7 +131,7 @@ const Skills = () => {
               <h3 className="text-xl font-bold text-text-primary">Infrastructure</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[{i:'deployed_code', n:'Docker'}, {i:'cloud', n:'AWS'}, {i:'terminal', n:'Linux'}, {i:'database', n:'Atlas'}].map(item => (
+              {[{i:'terminal', n:'Linux'}, {i:'deployed_code', n:'Docker'}, {i:'deployed_code', n:'Kubernetes'}, {i:'sync', n:'CI/CD'}, {i:'database', n:'MySQL'}, {i:'database', n:'PostgreSQL'}, {i:'database', n:'Atlas'}, {i:'database', n:'Redis'}].map(item => (
                 <div key={item.n} className="flex flex-col items-center p-4 rounded-xl bg-dark-base hover:bg-primary/10 transition-colors border border-white/5 group">
                   <span className="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">{item.i}</span>
                   <span className="text-xs font-bold mt-2 text-text-secondary">{item.n}</span>
