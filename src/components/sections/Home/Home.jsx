@@ -60,9 +60,9 @@ const Home = () => {
 						{/* Animated Floating Frame */}
 						<motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10">
 							<div className="absolute inset-0 bg-gradient-to-t from-dark-base/80 via-transparent to-transparent z-10" />
-							<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVWmyRv3VCTSnt1dQmzl5Iznnzo-3GNAXmDPQkoYWcgB_Y82S-cB9n1m8FNYsqwOUzNRHlBWxLsl7aesdhuzxe6IRQhUXLzDhVa0gZDmZ9uG63aq_eQ65KGFj4u8jwpdZ4kfSZmPElqYeg2_jMvs-W2FsbeyI8O-8TewzynTomhtCLdcE57k2zH1-PBG65veLre7Z9q9L6owmShEuesYnYHD0U7EIToFX5ymjHm8mT20y9NhFbr_zLAHw6ztW2dLLCCcBzgc8o3UdF" alt="Krishanu" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+							<div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-accent/10 to-transparent mix-blend-soft-light z-10 pointer-events-none" />
+							<img src="/images/image-1.png" alt="Krishanu" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95 contrast-110 saturate-125" onLoad={(e) => console.log(`Image natural size: ${e.target.naturalWidth}x${e.target.naturalHeight}`)} />
 
-							{/* Floating Badge */}
 							<motion.div initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 1 }} className="absolute bottom-8 left-8 z-20 flex items-center gap-3 bg-surface/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl" >
 								<div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-dark-base">
 									<span className="material-symbols-outlined font-bold">terminal</span>
