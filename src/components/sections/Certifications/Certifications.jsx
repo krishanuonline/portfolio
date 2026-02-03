@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Certifications = () => {
@@ -68,6 +68,27 @@ const Certifications = () => {
     visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
+  // Modal state
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [activeCert, setActiveCert] = useState(null);
+  const demoImage = '/images/image-1.png';
+
+  // Close on Escape
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setModalOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const openModal = (index) => {
+    setActiveCert(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
+
   return (
     <section id="certifications" className="bg-dark-base py-20 px-4 md:px-10">
       <div className="max-w-[1080px] mx-auto flex flex-col flex-1">
@@ -134,18 +155,58 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                <motion.a 
-                  href={cert.link}
+                <motion.button 
+                  type="button"
+                  onClick={() => openModal(index)}
                   whileHover={{ x: 5 }}
-                  className="mt-4 flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group/link"
+                  className="mt-4 flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group/link cursor-pointer"
                 >
                   <span>View Certificate</span>
                   <span className="material-symbols-outlined text-[16px] group-hover/link:animate-pulse">open_in_new</span>
-                </motion.a>
+                </motion.button>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer"
+            role="dialog" 
+            aria-modal="true"
+            onClick={closeModal}
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }} 
+              animate={{ scale: 1, opacity: 1 }} 
+              transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+              className="relative max-w-4xl w-[90vw] md:w-[70vw] rounded-2xl overflow-hidden bg-surface border border-white/10 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button 
+                onClick={closeModal} 
+                className="absolute top-3 right-3 z-10 p-2 rounded-lg bg-dark-base/70 text-text-secondary hover:text-primary hover:bg-dark-base cursor-pointer"
+                aria-label="Close"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+
+              {/* Image container */}
+              <div className="w-full max-h-[80vh] bg-dark-base">
+                <img 
+                  src={demoImage}
+                  alt={activeCert != null ? certs[activeCert].title : 'Certificate preview'}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
