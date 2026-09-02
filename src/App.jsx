@@ -17,6 +17,7 @@ import CursorGlow from './components/common/CursorGlow/CursorGlow'
 import CustomCursor from './components/common/CustomCursor/CustomCursor'
 import TechMarquee from './components/common/TechMarquee/TechMarquee'
 import ContactModal from './components/common/ContactModal/ContactModal'
+import Preloader from './components/common/Preloader/Preloader'
 
 function ContactModalRoot() {
 	const { isOpen, close } = useContactModal();
@@ -27,6 +28,7 @@ function App() {
 	return (
 		<LenisProvider>
 			<ContactModalProvider>
+				<Preloader />
 				<ScrollProgressBar />
 				<CursorGlow />
 				<CustomCursor />

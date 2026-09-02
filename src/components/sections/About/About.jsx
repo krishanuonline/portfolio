@@ -51,11 +51,11 @@ const About = () => {
           <motion.div variants={itemVariants} className="w-full max-w-[400px] lg:w-1/2">
             <div 
               className="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-2xl shadow-2xl relative overflow-hidden group border border-white/10"
-              style={{ backgroundImage: 'url("/images/aboutphoto.png")' }}
+              style={{ backgroundImage: 'url("/images/aboutphoto.jpg")' }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-dark-base/80 to-transparent opacity-60"></div>
               {/* Subtle hover zoom */}
-              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110 bg-[url('/images/aboutphoto.png')] bg-cover bg-center" />
+              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110 bg-[url('/images/aboutphoto.jpg')] bg-cover bg-center" />
             </div>
           </motion.div>
 
