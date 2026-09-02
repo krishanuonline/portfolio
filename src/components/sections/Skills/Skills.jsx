@@ -17,7 +17,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative bg-dark-base py-20 overflow-hidden">
+    <section id="skills" className="relative bg-dark-base pt-20 pb-12 overflow-hidden">
       {/* Animated Background Blobs */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <motion.div 
@@ -192,7 +192,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Learning Status */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <p className="text-sm text-text-secondary flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             Constantly learning and expanding this stack.

@@ -9,6 +9,7 @@ import ResearchAndDevelopment from './components/sections/ResearchAndDevelopment
 import Acamedic from './components/sections/Acamedic/Acamedic'
 import Certifications from './components/sections/Certifications/Certifications'
 import Footer from './components/layout/Footer/Footer'
+import WhatsAppButton from './components/common/WhatsAppButton/WhatsAppButton'
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 			<Acamedic />
 			<Certifications />
 			<Footer />
+			<WhatsAppButton />
 		</>
 	)
 }

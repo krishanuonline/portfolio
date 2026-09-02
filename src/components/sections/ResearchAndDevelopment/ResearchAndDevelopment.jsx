@@ -38,7 +38,7 @@ const ResearchAndDevelopment = () => {
   ];
 
   return (
-    <section id="rd" className="bg-dark-base py-20 px-4 md:px-10">
+    <section id="rd" className="bg-dark-base pt-12 pb-20 px-4 md:px-10">
       <div className="max-w-[960px] mx-auto flex flex-col gap-12">
         
         {/* Section Header */}
