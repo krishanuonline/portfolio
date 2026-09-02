@@ -1,4 +1,5 @@
 import React from 'react'
+import { LenisProvider } from './context/LenisContext'
 import Header from './components/layout/Header/Header'
 import Home from './components/sections/Home/Home'
 import About from './components/sections/About/About'
@@ -9,12 +10,21 @@ import ResearchAndDevelopment from './components/sections/ResearchAndDevelopment
 import Acamedic from './components/sections/Acamedic/Acamedic'
 import Certifications from './components/sections/Certifications/Certifications'
 import Footer from './components/layout/Footer/Footer'
+import WhatsAppButton from './components/common/WhatsAppButton/WhatsAppButton'
+import ScrollProgressBar from './components/common/ScrollProgressBar/ScrollProgressBar'
+import CursorGlow from './components/common/CursorGlow/CursorGlow'
+import CustomCursor from './components/common/CustomCursor/CustomCursor'
+import TechMarquee from './components/common/TechMarquee/TechMarquee'
 
 function App() {
 	return (
-		<>
+		<LenisProvider>
+			<ScrollProgressBar />
+			<CursorGlow />
+			<CustomCursor />
 			<Header />
 			<Home />
+			<TechMarquee />
 			<About />
 			<Experience />
 			<Projects />
@@ -23,7 +33,8 @@ function App() {
 			<Acamedic />
 			<Certifications />
 			<Footer />
-		</>
+			<WhatsAppButton />
+		</LenisProvider>
 	)
 }
 

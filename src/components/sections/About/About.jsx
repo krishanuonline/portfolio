@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Magnetic from '../../common/Magnetic/Magnetic';
 
 const About = () => {
   const drivers = [
@@ -44,7 +45,7 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="flex flex-col gap-8 lg:flex-row items-center lg:items-start py-10"
+          className="flex flex-col gap-8 lg:flex-row items-center py-10"
         >
           {/* Image Container */}
           <motion.div variants={itemVariants} className="w-full max-w-[400px] lg:w-1/2">
@@ -69,17 +70,29 @@ const About = () => {
                 Architecting the <span className="text-primary">Future</span>
               </h2>
               <p className="text-text-secondary text-base leading-relaxed">
-                I am <strong className="text-text-primary">Krishanu Mandal</strong>, a Software Engineer & Full Stack Developer with a passion for product-centric engineering. I specialize in building scalable web applications using React, Next.js, Node.js, and PHP.
+                I am <strong className="text-text-primary">Krishanu Mandal</strong>, a Full-Stack Software Engineer with 2+ years of end-to-end ownership — from system architecture to production delivery. I've led teams as a technical lead, mentored junior engineers, and driven projects from the ground up to scale. I bring a rare mix of strong development skills, leadership, and project management to every team I work with.
               </p>
             </div>
-            
+
             <div className="flex gap-4 pt-2">
-              <button className="h-12 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all active:scale-95">
-                Hire Me
-              </button>
-              <button className="h-12 px-8 rounded-xl border border-surface bg-surface/50 text-text-primary font-bold hover:bg-surface transition-all">
-                View Resume
-              </button>
+              <Magnetic strength={0.4}>
+                <a
+                  href="mailto:krishanu178@gmail.com"
+                  className="h-12 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all active:scale-95 flex items-center justify-center"
+                >
+                  Hire Me
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.4}>
+                <a
+                  href="https://drive.google.com/file/d/141tPhKEN4r8BKDCzS1I4J71DTOOwjsL3/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 px-8 rounded-xl border border-surface bg-surface/50 text-text-primary font-bold hover:bg-surface transition-all flex items-center justify-center"
+                >
+                  View Resume
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
         </motion.div>
@@ -133,13 +146,16 @@ const About = () => {
           <p className="text-text-secondary max-w-xl">
             I'm currently available for full-time opportunities and freelance projects. Let's discuss how I can contribute to your team.
           </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="h-14 px-10 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl shadow-2xl shadow-primary/30 transition-all"
-          >
-            Hire Me
-          </motion.button>
+          <Magnetic strength={0.35}>
+            <motion.a
+              href="mailto:krishanu178@gmail.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="h-14 px-10 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl shadow-2xl shadow-primary/30 transition-all flex items-center justify-center"
+            >
+              Hire Me
+            </motion.a>
+          </Magnetic>
         </motion.div>
       </div>
     </section>

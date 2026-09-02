@@ -4,34 +4,41 @@ import { motion } from 'framer-motion';
 const Projects = () => {
   const projectList = [
     {
-      title: "NetflixGPT",
-      version: "v2.0",
-      subtitle: "AI-Powered Movie Showcase",
-      desc: "Developed a ReactJS app with Redux Toolkit and Firebase. Integrated TMDB API for movies/trailers with planned OpenAI search integration.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPwHOjdkttDb4ipOSR-O64i8jR_i4f_-YHAi4-s7Xi6n-PZRMyHmyk4qSvgZgV_YiUjFUiTUYxnOjsRaeZk1IvcLB68P9BO41p-ffG4Kx1T4SY4OxeBKz3sCXfvu6E9-b0gEEPHPXb3FBZyOUmKT25U4DUNNV72JQowBflwoaVo5eR3FBBjUGzZlDCNGiUT9FEBphq8s89GEVeiLoF1rO5ij6xQ9CzSuzfwr0NbEsuf0ivqzjdvyenZS8hOxOqdnoprVF3ZyxrT4LW",
-      tags: ["ReactJS", "Redux", "Firebase"],
-      color: "blue",
-      live: true
-    },
-    {
-      title: "Food App",
+      title: "Sunblinds CRM & Operations",
       version: "",
-      subtitle: "Dynamic Ordering System",
-      desc: "Built a dynamic food ordering app with ReactJS, integrating Swiggy's live API. Utilized custom hooks and Redux Toolkit for state management.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9S8sx_xD9BY_fs4DsfecEuw0myy3oOUjTzxyt2aMiwr34lG6SRu6aSNZ1F_byxYXapfkm_YJIIcYUy2ymlHkkFoc2RyuaZ7J0MoQBDgkPpbR0EXPv63S1Z63Ip7lVvLPqabsWOfXljiPsph5Z8UHKEIai_uExUDSb2y7G3nbOfUH2ow2lBJma-lkaTBQcmfGonJGWtStNn2idphog2fQYILB87InZ5qQRBJ3F2TIMx-WnxTkHrUMT15oxZdJEHJVP9QMuW8z3Kwoz",
-      tags: ["ReactJS", "Swiggy API", "Tailwind"],
-      color: "emerald",
-      live: true
-    },
-    {
-      title: "BlogStar",
-      version: "",
-      subtitle: "Full Stack Blogging Platform",
-      desc: "A platform allowing users to create and comment on posts. Backend with NodeJS/Express, MongoDB for storage, and Cloudinary for media.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLutPSyYKrGxRjVuEw6lSMeD5KUylu-Rp9gAVgO8JioJeV3GuWYKfasOqggW4DCGqUnrprWKXYsbt4T0keD94ruf1ceJuZorN2ma2_rH-3-UJ52AiI7cWUfqCENFQnNGdDaZ7uJJouMYp2_s71dg4jiQiJ2lr_G4RSOaUJucXc8-4qIlZcb0SM1J4FOshXpr32PW6d5T-gLG6rqFGPZL_sYqgwl4dg6UWjcToeQ4K0B790LDykPlRanATswfZXn5ReDnOu7uQmqB8l",
-      tags: ["NodeJS", "Express", "MongoDB"],
+      subtitle: "Complete Organisation Digitalisation",
+      desc: "Architected and delivered a production React Native mobile app digitising the entire operations of a window/door blinds organisation — replacing pen-and-paper workflows across sales, procurement, and inventory. Integrated Meta and Google Ads Lead APIs for automated lead ingestion, plus a dynamic quotation engine and real-time inventory-linked sales order module.",
+      image: "https://images.unsplash.com/photo-1622651491473-ff3824d12768?w=900&q=80&fm=jpg&fit=crop",
+      tags: ["React Native", "Node.js", "PostgreSQL", "Meta API", "Google Ads API"],
+      icon: "inventory_2",
       color: "green",
-      live: true
+      private: true,
+      codeUrl: null,
+      liveUrl: null
+    },
+    {
+      title: "NetflixGPT",
+      version: "",
+      subtitle: "AI-Powered Movie Showcase",
+      desc: "Engineered a natural language movie search engine using the OpenAI GPT API to deliver personalized, mood-based recommendations, integrated with TMDB for real-time metadata. Built a high-performance UI with React.js, Vite, and Tailwind CSS, using Redux Toolkit for global state management and Firebase Authentication for secure user lifecycle management.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPwHOjdkttDb4ipOSR-O64i8jR_i4f_-YHAi4-s7Xi6n-PZRMyHmyk4qSvgZgV_YiUjFUiTUYxnOjsRaeZk1IvcLB68P9BO41p-ffG4Kx1T4SY4OxeBKz3sCXfvu6E9-b0gEEPHPXb3FBZyOUmKT25U4DUNNV72JQowBflwoaVo5eR3FBBjUGzZlDCNGiUT9FEBphq8s89GEVeiLoF1rO5ij6xQ9CzSuzfwr0NbEsuf0ivqzjdvyenZS8hOxOqdnoprVF3ZyxrT4LW",
+      tags: ["React.js", "Vite", "OpenAI API", "Redux Toolkit", "Firebase"],
+      icon: "movie",
+      color: "blue",
+      codeUrl: "https://github.com/krishanuonline/NetflixGPT",
+      liveUrl: null
+    },
+    {
+      title: "CurrencySwap",
+      version: "",
+      subtitle: "Real-Time FX Intelligence Platform",
+      desc: "Engineered a custom useCurrencyInfo hook to fetch and cache live mid-market exchange rates from a RESTful FX API, enabling seamless multi-currency conversions with real-time UI updates. Implemented bi-directional swap logic using advanced React Hooks, optimizing state management and minimizing re-renders across user interactions.",
+      image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=900&q=80&fm=jpg&fit=crop",
+      tags: ["React.js", "Custom Hooks", "REST API", "JavaScript"],
+      icon: "currency_exchange",
+      color: "emerald",
+      codeUrl: "https://github.com/krishanuonline/currency-converter-react",
+      liveUrl: "https://currencyconverter.codeandcreatives.com/"
     }
   ];
 
@@ -107,14 +114,22 @@ const Projects = () => {
             >
               {/* Image Header */}
               <div className="relative h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-base/90 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                <div 
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-                
-                {project.live && (
-                  <div className="absolute top-4 right-4 z-20">
+                {project.image ? (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-base/90 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    <div
+                      className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${project.image})` }}
+                    />
+                  </>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-surface to-accent/10 transition-transform duration-700 group-hover:scale-110">
+                    <span className="material-symbols-outlined text-6xl text-primary/60">{project.icon}</span>
+                  </div>
+                )}
+
+                <div className="absolute top-4 right-4 z-20">
+                  {project.liveUrl ? (
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-dark-base/60 px-3 py-1 text-xs font-bold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md">
                       <span className="relative flex h-2 w-2">
                         <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${index === 1 ? 'bg-emerald-400' : 'bg-primary'}`}></span>
@@ -122,8 +137,18 @@ const Projects = () => {
                       </span>
                       Live Project
                     </span>
-                  </div>
-                )}
+                  ) : project.private ? (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-dark-base/60 px-3 py-1 text-xs font-bold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md">
+                      <span className="material-symbols-outlined text-[14px]">lock</span>
+                      Private Client Project
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-dark-base/60 px-3 py-1 text-xs font-bold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md">
+                      <span className="material-symbols-outlined text-[14px]">code</span>
+                      Source Available
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Content */}
@@ -134,7 +159,7 @@ const Projects = () => {
                     {project.version && <span className="text-xs font-mono text-text-secondary">{project.version}</span>}
                   </div>
                   <p className="text-xs font-bold text-accent uppercase tracking-wider mb-3">{project.subtitle}</p>
-                  <p className="text-text-secondary text-sm leading-relaxed line-clamp-3 italic">
+                  <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
                     {project.desc}
                   </p>
                 </div>
@@ -150,15 +175,40 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <button className="flex-1 group/btn relative overflow-hidden rounded-xl bg-text-primary text-dark-base px-4 py-2.5 text-sm font-bold shadow transition-all hover:bg-white focus:outline-none">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        Live Demo
-                        <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 group/btn relative overflow-hidden rounded-xl bg-text-primary text-dark-base px-4 py-2.5 text-sm font-bold shadow transition-all hover:bg-white focus:outline-none"
+                      >
+                        <span className="relative z-10 flex items-center justify-center gap-2">
+                          Live Demo
+                          <span className="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                      </a>
+                    ) : (
+                      <button disabled className="flex-1 rounded-xl bg-text-primary/50 text-dark-base/60 px-4 py-2.5 text-sm font-bold cursor-not-allowed">
+                        <span className="flex items-center justify-center gap-2">
+                          {project.private ? 'Case Study' : 'Live Demo'}
+                          <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </span>
+                      </button>
+                    )}
+                    {project.codeUrl ? (
+                      <a
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="aspect-square p-2.5 rounded-xl bg-text-primary text-dark-base hover:bg-white transition-colors"
+                      >
+                        <span className="material-symbols-outlined">code</span>
+                      </a>
+                    ) : (
+                      <span className="aspect-square p-2.5 rounded-xl bg-text-primary/50 text-dark-base/60 cursor-not-allowed">
+                        <span className="material-symbols-outlined">lock</span>
                       </span>
-                    </button>
-                    <button className="aspect-square p-2.5 rounded-xl border border-white/10 text-text-secondary hover:text-text-primary hover:bg-white/5 transition-colors">
-                      <span className="material-symbols-outlined">code</span>
-                    </button>
+                    )}
                   </div>
                 </div>
               </div>

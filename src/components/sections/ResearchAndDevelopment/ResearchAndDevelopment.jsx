@@ -18,6 +18,7 @@ const ResearchAndDevelopment = () => {
       ],
       buttonText: "View Patent Details",
       buttonIcon: "arrow_forward",
+      buttonLink: "https://drive.google.com/file/d/1V2q6NVzLRmVDkGUmeSAUDIWK7hji1YIZ/view",
       primaryBtn: true
     },
     {
@@ -29,14 +30,15 @@ const ResearchAndDevelopment = () => {
       description: "A comprehensive handbook for mastering MySQL database management, covering fundamental queries to complex optimization techniques.",
       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbZL9AEOK3kxAVF2Road5zYKkian3ArcsQmjXGRMNWN34iv-pHrRvK9r-RXvu3qaDrKftyhIZNlaKfrtjyBjHdDf7rryIqi5--4HbIc6LzJUpJ3Ilwn37V8NDeURCLlcs1Kh3CnL2Uv9hbGopUN5SaxxKj1NmrslcD8eq-oLHsaep8yJAdlgtApdh3cZaKafD7CwqNawyDLGNv1KLmddoI-j8cvI2j5tVQnLkra2BtGKup_kDiZGkCkrbUS_fENJm7yuavWYrUWiTM",
       imgIcon: "database",
-      buttonText: "Read Handbook",
-      buttonIcon: "library_books",
-      primaryBtn: false
+      buttonText: "Publishing Soon",
+      buttonIcon: "hourglass_top",
+      primaryBtn: false,
+      comingSoon: true
     }
   ];
 
   return (
-    <section id="rd" className="bg-dark-base py-20 px-4 md:px-10">
+    <section id="rd" className="bg-dark-base pt-12 pb-20 px-4 md:px-10">
       <div className="max-w-[960px] mx-auto flex flex-col gap-12">
         
         {/* Section Header */}
@@ -74,6 +76,12 @@ const ResearchAndDevelopment = () => {
                     <span className={`${item.badgeColor} px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5`}>
                       {item.type}
                     </span>
+                    {item.comingSoon && (
+                      <span className="flex items-center gap-1.5 bg-amber-400/10 text-amber-400 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-400/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        Publishing Soon
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-2xl md:text-3xl font-bold text-text-primary leading-tight group-hover:text-primary transition-colors">
@@ -95,17 +103,39 @@ const ResearchAndDevelopment = () => {
                     </p>
                   )}
 
-                  <motion.button 
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`flex items-center justify-center gap-2 h-12 px-8 rounded-xl text-sm font-bold transition-all w-fit shadow-lg 
-                      ${item.primaryBtn 
-                        ? 'bg-primary text-white shadow-primary/20 hover:bg-primary-hover' 
-                        : 'bg-surface border border-white/10 text-text-primary hover:bg-white/5'}`}
-                  >
-                    <span>{item.buttonText}</span>
-                    <span className="material-symbols-outlined text-[18px]">{item.buttonIcon}</span>
-                  </motion.button>
+                  {item.buttonLink ? (
+                    <motion.a
+                      href={item.buttonLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`flex items-center justify-center gap-2 h-12 px-8 rounded-xl text-sm font-bold transition-all w-fit shadow-lg
+                        ${item.primaryBtn
+                          ? 'bg-primary text-white shadow-primary/20 hover:bg-primary-hover'
+                          : 'bg-surface border border-white/10 text-text-primary hover:bg-white/5'}`}
+                    >
+                      <span>{item.buttonText}</span>
+                      <span className="material-symbols-outlined text-[18px]">{item.buttonIcon}</span>
+                    </motion.a>
+                  ) : item.comingSoon ? (
+                    <button disabled className="flex items-center justify-center gap-2 h-12 px-8 rounded-xl text-sm font-bold w-fit shadow-lg bg-surface border border-white/5 text-text-secondary/50 cursor-not-allowed">
+                      <span>{item.buttonText}</span>
+                      <span className="material-symbols-outlined text-[18px]">{item.buttonIcon}</span>
+                    </button>
+                  ) : (
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`flex items-center justify-center gap-2 h-12 px-8 rounded-xl text-sm font-bold transition-all w-fit shadow-lg
+                        ${item.primaryBtn
+                          ? 'bg-primary text-white shadow-primary/20 hover:bg-primary-hover'
+                          : 'bg-surface border border-white/10 text-text-primary hover:bg-white/5'}`}
+                    >
+                      <span>{item.buttonText}</span>
+                      <span className="material-symbols-outlined text-[18px]">{item.buttonIcon}</span>
+                    </motion.button>
+                  )}
                 </div>
 
                 {/* Visual Preview */}

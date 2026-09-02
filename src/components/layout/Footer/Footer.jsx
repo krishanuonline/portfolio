@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useScrollTo } from '../../../context/LenisContext';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollTo = useScrollTo();
+  const scrollToTop = () => scrollTo(0);
 
   const contactInfo = [
     { 
@@ -82,10 +82,10 @@ const Footer = () => {
         {/* Divider & Copyright */}
         <div className="w-full pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-text-secondary text-xs font-medium tracking-wide leading-loose">
-                © {new Date().getFullYear()} <span className="text-text-primary font-bold">Krishanu Mandal</span>. 
-                <span className="hidden sm:inline"> | </span> 
+                © {new Date().getFullYear()} <span className="text-text-primary font-bold">Krishanu Mandal</span>.
+                <span className="hidden sm:inline"> | </span>
                 <br className="sm:hidden" />
-                Designed with precision and engineered with <span className="text-primary font-semibold italic">React & Tailwind</span>.
+                Made with ☕, late nights, and one too many "it works on my machine" moments 😄.
             </p>
           
         </div>
