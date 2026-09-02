@@ -10,17 +10,17 @@ const Experience = () => {
       location: "Kolkata, West Bengal",
       current: true,
       description: "A professional timeline of my roles, key projects, and technical leadership in software engineering.",
-      tags: ["PHP", "Laravel", "MySQL", "Node.js", "Next.js", "PostgreSQL", "Docker", "Prisma", "Redis", "CI/CD", "Zustand", "Tailwind"],
+      tags: ["Node.js", "Next.js", "React.js", "PostgreSQL", "MySQL", "Prisma", "Docker", "GitHub Actions", "GitLab CI", "Microservices"],
       projects: [
         {
-          name: "Prraniganga Project",
+          name: "Prraniganga – Multi-Vendor Livestock E-Commerce",
           icon: "shopping_cart",
-          desc: "Led development of India's first livestock multivendor e-commerce marketplace. Architecting v2.0 as microservices."
+          desc: "Architected and launched India's first multi-vendor livestock marketplace from zero to production on a Node.js microservices backend with a Next.js frontend, scaling to 13,000+ customers and ₹1 Cr+ quarterly GMV. Built an RBAC system for 4 user personas, an automated fulfillment pipeline, and a full-stack 360° customer analytics platform with predictive LTV and purchase-cycle intelligence."
         },
         {
-          name: "eParivahan SaaS",
+          name: "eParivahan – Enterprise Vehicle Procurement SaaS",
           icon: "local_shipping",
-          desc: "Built a logistics SaaS platform for real-time tracking and bidding with full CI/CD pipelines."
+          desc: "Built a high-traffic vehicle procurement platform adopted by Tata Steel, SAIL, and Ajanta, featuring a real-time bidding/auction engine and SIM-based fleet tracking at enterprise scale. Architected CI/CD pipelines with GitHub Actions and GitLab CI, cutting deployment downtime by ~50%, and mentored 2–3 junior engineers."
         }
       ]
     },
@@ -30,17 +30,22 @@ const Experience = () => {
       period: "Jan’24 - Aug’24",
       location: "Kolkata, West Bengal",
       current: false,
-      tags: ["React.js", "Node.js", "MySQL", "Sequelize ORM"],
+      tags: ["React.js", "Node.js", "MySQL", "Sequelize ORM", "Socket.io"],
       highlights: [
         {
           icon: "widgets",
-          title: "Module Leadership",
-          desc: "Spearheaded development of Drive Services, real-time Messaging, and Video Calling features."
+          title: "Real-Time SaaS Features",
+          desc: "Engineered real-time messaging and video calling using Socket.io, and contributed across messaging, video calling, cloud drive, and web hosting products in a fast-paced team."
         },
         {
           icon: "speed",
           title: "Performance Optimization",
-          desc: "Achieved a 25% reduction in load times by reengineering image handling architecture."
+          desc: "Achieved a 25% reduction in load times by migrating image handling from base64 encoding to Multer middleware, improving perceived performance for the entire user base."
+        },
+        {
+          icon: "dashboard_customize",
+          title: "No-Code Template Engine",
+          desc: "Architected and built a no-code web template engine enabling clients to self-create and host editable websites, owning the full React.js frontend and Node.js/Sequelize/MySQL backend."
         }
       ]
     }
