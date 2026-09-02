@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ContactModal from '../../common/ContactModal/ContactModal';
 import Magnetic from '../../common/Magnetic/Magnetic';
 import { useScrollTo } from '../../../context/LenisContext';
+import { useContactModal } from '../../../context/ContactModalContext';
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
-	const [isContactOpen, setIsContactOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState('');
 	const scrollTo = useScrollTo();
+	const { open: openContact } = useContactModal();
 
 	const navLinks = [
 		{ name: 'About Me', href: '#about' },
@@ -96,7 +96,7 @@ const Header = () => {
 					{/* Action Button (Optional but recommended) */}
 					<div className="hidden lg:block">
 						<Magnetic strength={0.3}>
-							<button onClick={() => setIsContactOpen(true)} className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(97,86,226,0.3)] cursor-pointer">Contact</button>
+							<button onClick={openContact} className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(97,86,226,0.3)] cursor-pointer">Contact</button>
 						</Magnetic>
 					</div>
 
@@ -121,15 +121,13 @@ const Header = () => {
 						</a>
 					))}
 					<button
-						onClick={() => { setIsMenuOpen(false); setIsContactOpen(true); }}
+						onClick={() => { setIsMenuOpen(false); openContact(); }}
 						className="mt-2 bg-primary hover:bg-primary-hover text-white px-4 py-3 rounded-xl text-base font-bold transition-all active:scale-95"
 					>
 						Contact
 					</button>
 				</nav>
 			</div>
-
-			<ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 		</header>
 	);
 };
