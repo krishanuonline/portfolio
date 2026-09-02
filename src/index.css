@@ -28,3 +28,21 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Custom cursor: only on devices with a real mouse, and only when motion is allowed */
+@media (hover: hover) and (pointer: fine) {
+  html:not(.reduce-motion) body,
+  html:not(.reduce-motion) a,
+  html:not(.reduce-motion) button {
+    cursor: none;
+  }
+}
+
+/* Infinite marquee strip */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-scroll 28s linear infinite;
+}

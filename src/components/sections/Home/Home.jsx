@@ -1,5 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScrambleText } from '../../../hooks/useScrambleText';
+import Magnetic from '../../common/Magnetic/Magnetic';
 
 const socialLinks = [
   {
@@ -33,6 +35,17 @@ const socialLinks = [
 ];
 
 const Home = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+  const [scramblePlaying, setScramblePlaying] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setScramblePlaying(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
+  const scrambledName = useScrambleText('Krishanu', scramblePlaying, { revealDelay: 3, holdFrames: 10 });
+
   // Animation Variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -43,12 +56,12 @@ const Home = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
+      transition: { staggerChildren: 0.18 }
     }
   };
 
   return (
-    <main className="relative flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-dark-base overflow-hidden">
+    <main ref={heroRef} className="relative flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-dark-base overflow-hidden">
 		{/* Background Ambient Glow */}
 		<div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 		<div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
@@ -59,11 +72,15 @@ const Home = () => {
 			{/* Text Content Section */}
 			<motion.div variants={staggerContainer} initial="hidden" animate="visible" className="order-2 lg:order-1 flex flex-col gap-8 text-center lg:text-left" >
 				<div className="space-y-4">
-				<motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight text-text-primary">
-					Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Krishanu</span>.<br/>
-					<span className="text-text-primary/90">Software Engineer</span>
-				</motion.h2>
-				
+				<h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight text-text-primary">
+					<motion.span variants={fadeInUp} className="block">
+						Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">{scrambledName}</span>.
+					</motion.span>
+					<motion.span variants={fadeInUp} className="block text-text-primary/90">
+						Software Engineer
+					</motion.span>
+				</h2>
+
 				<motion.p variants={fadeInUp} className="text-lg sm:text-xl text-text-secondary font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
 					Turning coffee into code and bugs into features. A full-stack developer who loves building scalable solutions for the modern web.
 				</motion.p>
@@ -71,16 +88,18 @@ const Home = () => {
 
 				{/* CTA & Socials */}
 				<motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-6 mt-2">
-					<motion.a
-						href="https://drive.google.com/file/d/141tPhKEN4r8BKDCzS1I4J71DTOOwjsL3/view?usp=sharing"
-						target="_blank"
-						rel="noopener noreferrer"
-						whileHover={{ scale: 1.05, shadow: "0px 0px 20px rgba(97, 86, 226, 0.5)" }}
-						whileTap={{ scale: 0.95 }}
-						className="flex items-center justify-center h-14 px-8 rounded-2xl bg-primary text-white text-base font-bold transition-colors shadow-lg shadow-primary/20 cursor-pointer"
-					>
-						<span className="material-symbols-outlined mr-2 cursor-pointer">download</span>Download Resume
-					</motion.a>
+					<Magnetic strength={0.4}>
+						<motion.a
+							href="https://drive.google.com/file/d/141tPhKEN4r8BKDCzS1I4J71DTOOwjsL3/view?usp=sharing"
+							target="_blank"
+							rel="noopener noreferrer"
+							whileHover={{ scale: 1.05, shadow: "0px 0px 20px rgba(97, 86, 226, 0.5)" }}
+							whileTap={{ scale: 0.95 }}
+							className="flex items-center justify-center h-14 px-8 rounded-2xl bg-primary text-white text-base font-bold transition-colors shadow-lg shadow-primary/20 cursor-pointer"
+						>
+							<span className="material-symbols-outlined mr-2 cursor-pointer">download</span>Download Resume
+						</motion.a>
+					</Magnetic>
 
 					<div className="flex items-center gap-4">
 						{socialLinks.map((social, index) => (
@@ -103,7 +122,7 @@ const Home = () => {
 				</motion.div>
 
 				{/* Hero Image Section */}
-				<motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="order-1 lg:order-2 flex justify-center lg:justify-end">
+				<motion.div style={{ y: imageY }} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="order-1 lg:order-2 flex justify-center lg:justify-end">
 					<div className="relative group">
 						{/* Animated Floating Frame */}
 						<motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10">

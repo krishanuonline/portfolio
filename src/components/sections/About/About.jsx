@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Magnetic from '../../common/Magnetic/Magnetic';
 
 const About = () => {
   const drivers = [
@@ -74,20 +75,24 @@ const About = () => {
             </div>
 
             <div className="flex gap-4 pt-2">
-              <a
-                href="mailto:krishanu178@gmail.com"
-                className="h-12 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all active:scale-95 flex items-center justify-center"
-              >
-                Hire Me
-              </a>
-              <a
-                href="https://drive.google.com/file/d/141tPhKEN4r8BKDCzS1I4J71DTOOwjsL3/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-12 px-8 rounded-xl border border-surface bg-surface/50 text-text-primary font-bold hover:bg-surface transition-all flex items-center justify-center"
-              >
-                View Resume
-              </a>
+              <Magnetic strength={0.4}>
+                <a
+                  href="mailto:krishanu178@gmail.com"
+                  className="h-12 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all active:scale-95 flex items-center justify-center"
+                >
+                  Hire Me
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.4}>
+                <a
+                  href="https://drive.google.com/file/d/141tPhKEN4r8BKDCzS1I4J71DTOOwjsL3/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 px-8 rounded-xl border border-surface bg-surface/50 text-text-primary font-bold hover:bg-surface transition-all flex items-center justify-center"
+                >
+                  View Resume
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
         </motion.div>
@@ -141,14 +146,16 @@ const About = () => {
           <p className="text-text-secondary max-w-xl">
             I'm currently available for full-time opportunities and freelance projects. Let's discuss how I can contribute to your team.
           </p>
-          <motion.a
-            href="mailto:krishanu178@gmail.com"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="h-14 px-10 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl shadow-2xl shadow-primary/30 transition-all flex items-center justify-center"
-          >
-            Hire Me
-          </motion.a>
+          <Magnetic strength={0.35}>
+            <motion.a
+              href="mailto:krishanu178@gmail.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="h-14 px-10 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl shadow-2xl shadow-primary/30 transition-all flex items-center justify-center"
+            >
+              Hire Me
+            </motion.a>
+          </Magnetic>
         </motion.div>
       </div>
     </section>
