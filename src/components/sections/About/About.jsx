@@ -51,11 +51,11 @@ const About = () => {
           <motion.div variants={itemVariants} className="w-full max-w-[400px] lg:w-1/2">
             <div 
               className="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-2xl shadow-2xl relative overflow-hidden group border border-white/10"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj5Fs7harQvcdxRNLfrzqtKQkmHqqAsBWeOKUx32hXNGGBBn8zL8HHctcS0Z-uPbkbTIx9Mzyv1d5Lx7UE2upmhsTPBu0B3OEWN4lWp59OyKdXw8g-eP0iBOeijzDiqP4sBpl6XfXK6hSWW0oXZHaql2OrJU233oQ-nmDgOYCE185knw2RJYJvYTxwSqkj6P-DyFkukRpDFm_g3C4yV0wbb6g2vMal-n1uLBJES9vSYpAsrWpQp_dC8PZ-yVYqLCKQLYBZ3BwG3_")' }}
+              style={{ backgroundImage: 'url("/images/aboutphoto.png")' }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-dark-base/80 to-transparent opacity-60"></div>
               {/* Subtle hover zoom */}
-              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj5Fs7harQvcdxRNLfrzqtKQkmHqqAsBWeOKUx32hXNGGBBn8zL8HHctcS0Z-uPbkbTIx9Mzyv1d5Lx7UE2upmhsTPBu0B3OEWN4lWp59OyKdXw8g-eP0iBOeijzDiqP4sBpl6XfXK6hSWW0oXZHaql2OrJU233oQ-nmDgOYCE185knw2RJYJvYTxwSqkj6P-DyFkukRpDFm_g3C4yV0wbb6g2vMal-n1uLBJES9vSYpAsrWpQp_dC8PZ-yVYqLCKQLYBZ3BwG3_')] bg-cover bg-center" />
+              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110 bg-[url('/images/aboutphoto.png')] bg-cover bg-center" />
             </div>
           </motion.div>
 

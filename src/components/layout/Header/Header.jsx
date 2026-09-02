@@ -64,7 +64,7 @@ const Header = () => {
 						className="flex items-center gap-3 group cursor-pointer"
 					>
 						<div className="h-10 w-10 overflow-hidden rounded-full ring-2 ring-primary transition-transform group-hover:scale-110">
-							<div className="h-full w-full bg-center bg-cover bg-no-repeat" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDn3bwOQw7OMeQXP4lgiHKE-e2KMz33JGF4eHMTz53wugysq0IH5kDltsx9rVEsVlj7qMpmEnoZmgwZ2p9434vnYrK8_CwfzGSDiX-iY9xgAg3H_GFDRODK4uwk0sVsoqztK6CZTIbqUdpGqb-87x4Ak3k0TRvFwY_5ND7x8Jzccp0fszpZKKCg_oS5G4nYBej4X5Sqg1TnCtzjQKK0lMr13ns4ZkYwKxlMeWyarvl9LXS_MBKW249fmGq_ba1lJy-ngwyOngKj8ZMU")' }}/>
+							<div className="h-full w-full bg-center bg-cover bg-no-repeat" style={{ backgroundImage: 'url("/images/icon.png")' }}/>
 						</div>
 						<div className="flex flex-col"> <h1 className="text-lg font-bold tracking-tight text-text-primary"> Krishanu Mandal </h1>
 							<span className="text-[10px] uppercase tracking-widest text-accent font-bold">Portfolio</span>
