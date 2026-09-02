@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import ContactModal from '../../common/ContactModal/ContactModal';
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isContactOpen, setIsContactOpen] = useState(false);
 
 	// Add a shadow/background opacity change on scroll for better UX
 	useEffect(() => {
@@ -44,7 +46,7 @@ const Header = () => {
 					</nav>
 					{/* Action Button (Optional but recommended) */}
 					<div className="hidden lg:block">
-						<a href="mailto:krishanu178@gmail.com" className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(97,86,226,0.3)] cursor-pointer">Contact</a>
+						<button onClick={() => setIsContactOpen(true)} className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(97,86,226,0.3)] cursor-pointer">Contact</button>
 					</div>
 
 					{/* Mobile Menu Button */}
@@ -60,8 +62,16 @@ const Header = () => {
 					{navLinks.map((link) => (
 						<a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="px-4 py-3 text-base font-medium text-text-secondary hover:text-text-primary hover:bg-primary/10 rounded-xl transition-colors">{link.name}</a>
 					))}
+					<button
+						onClick={() => { setIsMenuOpen(false); setIsContactOpen(true); }}
+						className="mt-2 bg-primary hover:bg-primary-hover text-white px-4 py-3 rounded-xl text-base font-bold transition-all active:scale-95"
+					>
+						Contact
+					</button>
 				</nav>
 			</div>
+
+			<ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 		</header>
 	);
 };
