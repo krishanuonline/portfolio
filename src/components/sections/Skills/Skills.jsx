@@ -62,15 +62,15 @@ const Skills = () => {
         </div>
 
         {/* Bento Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6"
         >
-          {/* Programming Languages */}
-          <motion.div variants={fadeInUp} className="lg:col-span-7 p-8 rounded-3xl bg-surface border border-white/5 group hover:border-primary/30 transition-all">
+          {/* Languages */}
+          <motion.div variants={fadeInUp} className="lg:col-span-6 p-8 rounded-3xl bg-surface border border-white/5 group hover:border-primary/30 transition-all">
             <div className="flex items-center gap-4 mb-8">
               <div className="size-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary shadow-lg">
                 <span className="material-symbols-outlined text-[28px]">code_blocks</span>
@@ -78,7 +78,7 @@ const Skills = () => {
               <h3 className="text-2xl font-bold text-text-primary">Languages</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {['JavaScript', 'Java', 'PHP', 'HTML/CSS'].map((skill) => (
+              {['TypeScript', 'JavaScript (ES6+)', 'PHP', 'Java', 'HTML5', 'CSS3'].map((skill) => (
                 <div key={skill} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-white/5 text-text-secondary border border-white/10 hover:scale-105 transition-transform cursor-default">
                    {skill}
                 </div>
@@ -86,66 +86,106 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Dev Tools */}
-          <motion.div variants={fadeInUp} className="lg:col-span-5 p-8 rounded-3xl bg-surface border border-white/5 hover:border-accent/30 transition-all">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="size-12 rounded-2xl bg-accent/20 flex items-center justify-center text-accent">
-                <span className="material-symbols-outlined text-[28px]">build_circle</span>
+          {/* Frontend & Mobile */}
+          <motion.div variants={fadeInUp} className="lg:col-span-6 p-8 rounded-3xl bg-surface border border-white/5 hover:border-blue-400/30 transition-all">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="size-12 rounded-2xl bg-blue-400/20 flex items-center justify-center text-blue-400 shadow-lg">
+                <span className="material-symbols-outlined text-[28px]">devices</span>
               </div>
-              <h3 className="text-xl font-bold text-text-primary">Tools</h3>
+              <h3 className="text-2xl font-bold text-text-primary">Frontend &amp; Mobile</h3>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {['React.js', 'Next.js', 'React Native', 'Redux Toolkit', 'Zustand', 'Tailwind CSS'].map((skill) => (
+                <div key={skill} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-white/5 text-text-secondary border border-white/10 hover:scale-105 transition-transform cursor-default">
+                   {skill}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Backend & API */}
+          <motion.div variants={fadeInUp} className="lg:col-span-7 p-8 rounded-3xl bg-surface border border-white/5 hover:border-emerald-400/30 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="size-12 rounded-2xl bg-emerald-400/20 flex items-center justify-center text-emerald-400">
+                <span className="material-symbols-outlined text-[28px]">dns</span>
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">Backend &amp; API</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['VS Code', 'Postman', 'Git', 'GitHub', 'GitLab'].map(tool => (
+              {['Node.js', 'Express.js', 'Laravel', 'RESTful APIs', 'Socket.io', 'Microservices', 'Meta API', 'Google API'].map(tool => (
                 <span key={tool} className="px-3 py-1.5 rounded-lg bg-dark-base text-text-secondary text-sm font-bold border border-white/5">{tool}</span>
               ))}
             </div>
           </motion.div>
 
-          {/* Frameworks Stack */}
-          <motion.div variants={fadeInUp} className="lg:col-span-4 lg:row-span-2 p-8 rounded-3xl bg-surface border border-white/5 hover:border-purple-500/30 transition-all">
-            <h3 className="text-xl font-bold text-text-primary mb-8 flex items-center gap-3">
-               <span className="material-symbols-outlined text-primary">layers</span> Stack
+          {/* Databases & ERP */}
+          <motion.div variants={fadeInUp} className="lg:col-span-5 p-8 rounded-3xl bg-surface border border-white/5 hover:border-amber-400/30 transition-all">
+            <h3 className="text-xl font-bold text-text-primary mb-6 flex items-center gap-3">
+               <span className="material-symbols-outlined text-amber-400">database</span> Databases &amp; ERP
             </h3>
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-3">Frontend</h4>
-                <div className="flex flex-wrap gap-2">
-                  {['ReactJS', 'NextJS', 'Redux', 'Tailwind'].map(s => <span key={s} className="px-3 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20">{s}</span>)}
-                </div>
-              </div>
-              <div>
-                <h4 className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-3">Backend</h4>
-                <div className="flex flex-wrap gap-2">
-                  {['NodeJS', 'Express', 'Laravel'].map(s => <span key={s} className="px-3 py-1 text-xs rounded-md bg-green-500/10 text-green-400 border border-green-500/20">{s}</span>)}
-                </div>
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {['MySQL', 'PostgreSQL', 'MongoDB (Atlas)', 'ERPNext'].map(s => <span key={s} className="px-3 py-1 text-xs rounded-md bg-amber-400/10 text-amber-400 border border-amber-400/20">{s}</span>)}
             </div>
           </motion.div>
 
-          {/* Infrastructure */}
-          <motion.div variants={fadeInUp} className="lg:col-span-8 p-8 rounded-3xl bg-surface border border-white/5 hover:border-orange-500/30 transition-all">
+          {/* Cloud & Infra */}
+          <motion.div variants={fadeInUp} className="lg:col-span-4 p-8 rounded-3xl bg-surface border border-white/5 hover:border-orange-500/30 transition-all">
             <div className="flex items-center gap-4 mb-6">
               <div className="size-12 rounded-2xl bg-orange-500/20 flex items-center justify-center text-orange-500">
-                <span className="material-symbols-outlined text-[28px]">dns</span>
+                <span className="material-symbols-outlined text-[28px]">cloud</span>
               </div>
-              <h3 className="text-xl font-bold text-text-primary">Infrastructure</h3>
+              <h3 className="text-xl font-bold text-text-primary">Cloud &amp; Infra</h3>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[{i:'deployed_code', n:'Docker'}, {i:'cloud', n:'AWS'}, {i:'terminal', n:'Linux'}, {i:'database', n:'Atlas'}].map(item => (
-                <div key={item.n} className="flex flex-col items-center p-4 rounded-xl bg-dark-base hover:bg-primary/10 transition-colors border border-white/5 group">
-                  <span className="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">{item.i}</span>
-                  <span className="text-xs font-bold mt-2 text-text-secondary">{item.n}</span>
-                </div>
+            <div className="flex flex-wrap gap-2">
+              {['Docker', 'Nginx', 'Linux Administration', 'Firebase'].map(s => (
+                <span key={s} className="px-3 py-1.5 rounded-lg bg-dark-base text-text-secondary text-sm font-bold border border-white/5">{s}</span>
               ))}
             </div>
           </motion.div>
 
-          {/* Additional Utils */}
-          <motion.div variants={fadeInUp} className="lg:col-span-8 p-8 rounded-3xl bg-surface border border-white/5">
-            <h4 className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-4">Utilities</h4>
+          {/* DevOps & CI/CD */}
+          <motion.div variants={fadeInUp} className="lg:col-span-4 p-8 rounded-3xl bg-surface border border-white/5 hover:border-cyan-400/30 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="size-12 rounded-2xl bg-cyan-400/20 flex items-center justify-center text-cyan-400">
+                <span className="material-symbols-outlined text-[28px]">sync</span>
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">DevOps &amp; CI/CD</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Git', 'GitHub Actions', 'GitLab CI', 'CI/CD Pipelines'].map(s => (
+                <span key={s} className="px-3 py-1.5 rounded-lg bg-dark-base text-text-secondary text-sm font-bold border border-white/5">{s}</span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Testing & QA */}
+          <motion.div variants={fadeInUp} className="lg:col-span-4 p-8 rounded-3xl bg-surface border border-white/5 hover:border-rose-400/30 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="size-12 rounded-2xl bg-rose-400/20 flex items-center justify-center text-rose-400">
+                <span className="material-symbols-outlined text-[28px]">bug_report</span>
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">Testing &amp; QA</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Jest', 'Postman', 'Integration Testing', 'ESLint'].map(s => (
+                <span key={s} className="px-3 py-1.5 rounded-lg bg-dark-base text-text-secondary text-sm font-bold border border-white/5">{s}</span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Architecture & System Design */}
+          <motion.div variants={fadeInUp} className="lg:col-span-12 p-8 rounded-3xl bg-surface border border-white/5 hover:border-violet-400/30 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="size-12 rounded-2xl bg-violet-400/20 flex items-center justify-center text-violet-400">
+                <span className="material-symbols-outlined text-[28px]">hub</span>
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">Architecture &amp; System Design</h3>
+            </div>
             <div className="flex flex-wrap gap-3">
-              {['FileZilla', 'phpMyAdmin', 'Android Studio', 'MS Office'].map(u => (
-                <span key={u} className="px-4 py-2 rounded-full bg-dark-base text-text-secondary text-xs border border-white/5">{u}</span>
+              {['Microservices', 'RBAC Design', 'API Design', 'Event-Driven Systems', 'System Design'].map(skill => (
+                <div key={skill} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-violet-400/10 text-violet-300 border border-violet-400/20 hover:scale-105 transition-transform cursor-default">
+                   {skill}
+                </div>
               ))}
             </div>
           </motion.div>
